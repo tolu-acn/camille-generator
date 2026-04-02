@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camille — Background Composer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <div class="preview">
+    <div class="preview-badge">camille<span>.</span></div>
+    <canvas id="mainCanvas"></canvas>
+    <div class="preview-dimensions" id="dimLabel">1920 × 1080</div>
+  </div>
+
+  <div class="panel" style="position:relative">
+    <div class="panel-scroll" id="panelScroll">
+
+      <!-- PRESETS -->
+      <div class="section" data-section="presets">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span class="section-title">Presets</span>
+          <span class="section-chevron">▼</span>
+        </div>
+        <div class="section-body">
+          <div class="preset-grid" id="presetGrid"></div>
+        </div>
+      </div>
+
+      <!-- BACKGROUND -->
+      <div class="section collapsed" data-section="background">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span class="section-title">Background</span>
+          <span class="section-chevron">▼</span>
+        </div>
+        <div class="section-body" id="bgControls"></div>
+      </div>
+
+      <!-- GLOW FIELDS -->
+      <div class="section collapsed" data-section="glow">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span class="section-title">Glow Fields</span>
+          <span class="section-chevron">▼</span>
+        </div>
+        <div class="section-body" id="glowControls"></div>
+      </div>
+
+      <!-- TEXTURE -->
+      <div class="section collapsed" data-section="texture">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span class="section-title">Texture</span>
+          <span class="section-chevron">▼</span>
+        </div>
+        <div class="section-body" id="textureControls"></div>
+      </div>
+
+      <!-- MARKS -->
+      <div class="section collapsed" data-section="marks">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span class="section-title">Marks</span>
+          <span class="section-chevron">▼</span>
+        </div>
+        <div class="section-body" id="markControls"></div>
+      </div>
+
+      <!-- COMPOSITION + EXPORT -->
+      <div class="section collapsed" data-section="composition">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span class="section-title">Finish</span>
+          <span class="section-chevron">▼</span>
+        </div>
+        <div class="section-body" id="compControls"></div>
+      </div>
+
+      <!-- LOCKS -->
+      <div class="section collapsed" data-section="randomize">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span class="section-title">Locks</span>
+          <span class="section-chevron">▼</span>
+        </div>
+        <div class="section-body" id="randControls"></div>
+      </div>
+
+      <!-- EXPORT -->
+      <div class="section collapsed" data-section="export">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span class="section-title">Export</span>
+          <span class="section-chevron">▼</span>
+        </div>
+        <div class="section-body" id="exportControls"></div>
+      </div>
+
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn" onclick="randomizeAll()" data-tip="Randomize unlocked layers">⚄ Shuffle</button>
+      <button class="btn btn-accent" onclick="exportImage()">↓ Export</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
